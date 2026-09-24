@@ -37,18 +37,42 @@ backToTop.addEventListener('click', () => {
 window.addEventListener('scroll', toggleBackToTop, { passive: true });
 toggleBackToTop();
 // EDIT THESE IMAGE PATHS WHEN YOU SWITCH IMAGES
+// EDIT THESE IMAGE PATHS WHEN YOU SWITCH IMAGES
 const editableImageSlots = [
   {
+    type: 'symptom',
     selector: '#symptoms article:nth-of-type(1)',
     key: 'early-symptoms',
     src: 'Images/Early Symptoms.png',
     alt: 'Early symptoms of heat illness'
   },
   {
+    type: 'symptom',
     selector: '#symptoms article:nth-of-type(2)',
     key: 'life-threatening',
     src: 'Images/Life Threatening.png',
     alt: 'Life-threatening signs of heat illness'
+  },
+  {
+    type: 'section',
+    selector: '#prevent .mb-9',
+    key: 'heat-prevention',
+    src: 'Images/Heat Prevention.png',
+    alt: 'Heat illness prevention'
+  },
+  {
+    type: 'section',
+    selector: '#plan .mb-9',
+    key: 'plan-the-day',
+    src: 'Images/Plan the Day.png',
+    alt: 'Planning a safer workday'
+  },
+  {
+    type: 'section',
+    selector: '#rights > div > .grid',
+    key: 'worker-rights',
+    src: 'Images/Worker Rights.png',
+    alt: 'California outdoor worker rights'
   }
 ];
 
