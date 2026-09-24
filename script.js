@@ -36,3 +36,64 @@ backToTop.addEventListener('click', () => {
 
 window.addEventListener('scroll', toggleBackToTop, { passive: true });
 toggleBackToTop();
+// EDIT THESE IMAGE PATHS WHEN YOU SWITCH IMAGES
+const editableImageSlots = [
+  {
+    selector: '#symptoms article:nth-of-type(1)',
+    key: 'early-symptoms',
+    src: 'Images/Early Symptoms.png',
+    alt: 'Early symptoms of heat illness'
+  },
+  {
+    selector: '#symptoms article:nth-of-type(2)',
+    key: 'life-threatening',
+    src: 'Images/Life Threatening.png',
+    alt: 'Life-threatening signs of heat illness'
+  }
+];
+
+function setupEditableImageBlocks() {
+  editableImageSlots.forEach((slot) => {
+    const card = document.querySelector(slot.selector);
+    if (!card) return;
+
+    card.classList.add('symptom-card');
+
+    const heading = card.children[0];
+    let imageBlock = card.querySelector('.image-block');
+
+    if (!imageBlock) {
+      imageBlock = document.createElement('figure');
+    }
+
+    imageBlock.className = 'image-block symptom-image';
+    imageBlock.dataset.imageSlot = slot.key;
+    imageBlock.innerHTML = `
+      <img src="${slot.src}" alt="${slot.alt}">
+    `;
+
+    heading.insertAdjacentElement('afterend', imageBlock);
+  });
+}
+
+function setupBackToTopButton() {
+  const button = document.getElementById('backToTop');
+  if (!button) return;
+
+  function updateButton() {
+    const visible = window.scrollY > 520;
+    button.classList.toggle('is-visible', visible);
+    button.setAttribute('aria-hidden', String(!visible));
+    button.tabIndex = visible ? 0 : -1;
+  }
+
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', updateButton, { passive: true });
+  updateButton();
+}
+
+setupEditableImageBlocks();
+setupBackToTopButton();
