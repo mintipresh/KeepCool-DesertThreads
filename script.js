@@ -67,13 +67,7 @@ const editableImageSlots = [
     src: 'Images/Plan the Day.png',
     alt: 'Planning a safer workday'
   },
-  {
-    type: 'section',
-    selector: '#rights > div > .grid > div:first-child > p',
-    key: 'worker-rights',
-    src: 'Images/Worker Rights.png',
-    alt: 'California outdoor worker rights'
-  },
+
   {
   type: 'inline',
   selector: '#symptoms aside h4',
@@ -130,9 +124,7 @@ setupEditableImageBlocks();
 imageBlock.className =
   slot.type === 'symptom'
     ? 'image-block symptom-image'
-    : slot.key === 'worker-rights'
-      ? 'image-block rights-image'
-      : slot.type === 'inline'
-        ? 'image-block help-image'
-        : 'image-block image-block--section section-image';
+    : slot.type === 'inline'
+      ? 'image-block help-image'
+      : 'image-block image-block--section section-image';
 setupBackToTopButton();

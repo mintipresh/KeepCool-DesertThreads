@@ -592,11 +592,6 @@ main > section:nth-of-type(2) span {
   max-width: 48rem;
   margin: 0 auto 1.5rem;
 }
-.rights-image {
-  width: min(100%, 15rem);
-  aspect-ratio: 11 / 8.5;
-  margin: 1.25rem 0 0;
-}
 .help-image {
   width: 100%;
   margin: 1rem 0;
