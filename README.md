@@ -7,4 +7,5 @@ This component involves educating farmworkers on heat safety and signs of heat i
 The project is based on my hometown, the people who uphold and define it, and the family who has supported me.
 
 With love and sincerity,
+
 Kateleen Ganzon
