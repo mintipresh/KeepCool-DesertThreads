@@ -21,3 +21,18 @@ document.querySelectorAll('.language-choice').forEach(b=>b.addEventListener('cli
 document.getElementById('languageSwitch').addEventListener('click',()=>document.getElementById('languageModal').classList.remove('hidden'));
 const saved=localStorage.getItem('keepCoolLanguage'); if(saved&&copy[saved])setLanguage(saved);
 window.addEventListener('load',()=>{if(window.QRCode)new QRCode(document.getElementById('qrcode'),{text:window.location.href,width:128,height:128,colorDark:'#2C2C24',colorLight:'#ffffff'});});
+const backToTop = document.getElementById('backToTop');
+
+function toggleBackToTop() {
+  const visible = window.scrollY > 520;
+  backToTop.classList.toggle('is-visible', visible);
+  backToTop.setAttribute('aria-hidden', String(!visible));
+  backToTop.tabIndex = visible ? 0 : -1;
+}
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', toggleBackToTop, { passive: true });
+toggleBackToTop();
