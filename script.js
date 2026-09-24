@@ -20,4 +20,4 @@ function setLanguage(next){lang=next;document.documentElement.lang=next==='tl'?'
 document.querySelectorAll('.language-choice').forEach(b=>b.addEventListener('click',()=>setLanguage(b.dataset.language)));
 document.getElementById('languageSwitch').addEventListener('click',()=>document.getElementById('languageModal').classList.remove('hidden'));
 const saved=localStorage.getItem('keepCoolLanguage'); if(saved&&copy[saved])setLanguage(saved);
-window.addEventListener('load',()=>{if(window.QRCode)new QRCode(document.getElementById('qrcode'),{text:window.location.href,width:128,height:128,colorDark:'#173f4a',colorLight:'#ffffff'});});
+window.addEventListener('load',()=>{if(window.QRCode)new QRCode(document.getElementById('qrcode'),{text:window.location.href,width:128,height:128,colorDark:'#2C2C24',colorLight:'#ffffff'});});
