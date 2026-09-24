@@ -66,15 +66,7 @@ const editableImageSlots = [
     key: 'plan-the-day',
     src: 'Images/Plan the Day.png',
     alt: 'Planning a safer workday'
-  },
-
-  {
-  type: 'inline',
-  selector: '#symptoms aside h4',
-  key: 'how-to-get-help',
-  src: 'Images/How To Get Help.png',
-  alt: 'How to get emergency help'
-}
+  }
 ];
 
 function setupEditableImageBlocks() {
@@ -124,7 +116,5 @@ setupEditableImageBlocks();
 imageBlock.className =
   slot.type === 'symptom'
     ? 'image-block symptom-image'
-    : slot.type === 'inline'
-      ? 'image-block help-image'
       : 'image-block image-block--section section-image';
 setupBackToTopButton();
